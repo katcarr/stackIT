@@ -14,12 +14,14 @@ group :development do
   gem 'web-console'
   gem 'spring'
   gem 'quiet_assets'
+  gem 'pry'
 end
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem "letter_opener", :group => :development
 end
 
 group :test do

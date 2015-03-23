@@ -1,6 +1,6 @@
 <h1>StackIT</h1>
 
-<h4>Welcome <%= current_user.email %></h4>
+<h4>Welcome <%= @user.email %></h4>
 
 
 <%= render 'form' %>
@@ -10,3 +10,6 @@
     <li><%= link_to question.ask, question_path(question) %></li>
   <% end %>
 </ul>
+
+
+<p><%= link_to "Profile Page", user_path(current_user)  %></p>
