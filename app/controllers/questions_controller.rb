@@ -7,6 +7,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @response = Response.new
+
   end
 
   def new
@@ -14,7 +15,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = current_user.questions.new(question_params)
     if @question.save
       flash[:notice] = "Question Successfully Asked!"
     else
