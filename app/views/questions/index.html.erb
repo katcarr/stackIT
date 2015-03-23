@@ -4,6 +4,6 @@
 
 <ul>
   <% @questions.each do |question| %>
-    <li><%= question.ask %></li>
+    <li><%= link_to question.ask, question_path(question) %></li>
   <% end %>
 </ul>

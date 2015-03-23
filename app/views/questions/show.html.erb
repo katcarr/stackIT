@@ -1,0 +1,15 @@
+<h1><%= @question.ask %></h1>
+
+<ul>
+  <% @question.responses.each do |response| %>
+    <li><%= response.answer %></li>
+  <% end %>
+</ul>
+
+
+<%= form_for [@question, @response], class:"form-horizontal" do |f| %>
+  <%= f.label :answer, class:"form-label" %>
+  <%= f.text_field :answer, class:"form-control" %>
+
+  <%= f.submit "AnswerIT", class: ['btn-warning', 'btn'] %>
+<% end %>

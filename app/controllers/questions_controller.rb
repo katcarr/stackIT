@@ -5,7 +5,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
-
+    @question = Question.find(params[:id])
+    @response = Response.new
   end
 
   def new

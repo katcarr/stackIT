@@ -7,6 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="nav-bar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">StackIT</a>
+      </div>
+      <div class="nav navbar-nav navbar-right">
+        <%= link_to "Log Out", log_out_path, class: ["btn", "btn-primary", 'btn-xsm']  %>
+      </div>
+    </div>
+
+  </nav>
+
+
+
 <div class="container">
 
   <%= flash[:alert]%>

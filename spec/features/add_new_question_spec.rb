@@ -14,4 +14,6 @@ require 'rails_helper'
       click_on 'Submit'
       expect(page).to have_content 'How do I be more awesome'
     end
+
+
 end
