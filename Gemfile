@@ -14,7 +14,6 @@ group :development do
   gem 'web-console'
   gem 'spring'
   gem 'quiet_assets'
-  gem 'pry'
 end
 
 group :test, :development do
@@ -22,6 +21,7 @@ group :test, :development do
   gem 'capybara'
   gem 'factory_girl_rails'
   gem "letter_opener", :group => :development
+  gem 'pry'
 end
 
 group :test do
