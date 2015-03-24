@@ -11,9 +11,17 @@ class ResponsesController < ApplicationController
     redirect_to :back
   end
 
+  def update
+    response = Response.find(params[:id])
+    response.update(response_params)
+    response.save()
+    binding.pry
+    redirect_to user_path(current_user)
+  end
+
   private
   def response_params
-    params.require(:response).permit(:answer)
+    params.require(:response).permit(:answer, :best)
   end
 
 end

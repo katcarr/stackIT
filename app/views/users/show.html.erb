@@ -1,9 +1,20 @@
+
+<h4>Your Questions</h4>
 <% @user.questions.each do |q|%>
   <ul>
     <li><%= q.ask %></li>
+      <% q.bestFirst.each do |r| %>
+        <ul>
+          <div id="response-id-#{r.id}">
+            <li><%= r.answer %> | <%= link_to 'Best Answer', question_response_path(q, r, response: {best: true}), data: {method: "patch"}  %></li>
+            </div>
+        </ul>
+      <% end %>
   </ul>
 <% end %>
 
+
+<h4>Your Reponses</h4>
 <% @user.responses.each do |r|%>
   <ul>
     <li>Question: <%= r.question.ask %></li>
