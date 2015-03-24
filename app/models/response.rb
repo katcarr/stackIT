@@ -5,7 +5,7 @@ class Response < ActiveRecord::Base
   after_create :send_notification
 
   def send_notification
-    UserMailer.response_notification(self.question.user).deliver
+    UserMailer.response_notification(self.question.user).deliver_now
   end
 
 end
