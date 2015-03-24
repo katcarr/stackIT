@@ -3,3 +3,10 @@
     <li><%= q.ask %></li>
   </ul>
 <% end %>
+
+<% @user.responses.each do |r|%>
+  <ul>
+    <li>Question: <%= r.question.ask %></li>
+    <li>Response: <%= r.answer %></li>
+  </ul>
+<% end %>

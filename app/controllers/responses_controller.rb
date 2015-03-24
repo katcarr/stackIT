@@ -2,6 +2,7 @@ class ResponsesController < ApplicationController
   def create
     question = Question.find(params[:question_id])
     response = question.responses.new(response_params)
+    response.user_id = current_user.id
     if response.save
       flash[:notice] = "Answer Successfully Added!"
     else
