@@ -5,11 +5,12 @@
 
 <%= render 'form' %>
 
-<ul>
+<br>
+<br>
+
+<h2>Recent Questions</h2>
   <% @questions.each do |question| %>
-    <li><%= link_to question.ask, question_path(question) %></li>
+<div id="questions">
+    <h3><%= link_to question.ask, question_path(question) %></h3>
+</div>
   <% end %>
-</ul>
-
-
-<p><%= link_to "Profile Page", user_path(current_user)  %></p>

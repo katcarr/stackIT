@@ -4,6 +4,7 @@
   <title>StackOverflowClone</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -11,9 +12,16 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="/questions">StackIT</a>
+        <ul class="nav navbar-nav">
+          <li>
+            <% if current_user %>
+            <%= link_to "Profile Page", user_path(current_user) %>
+            <% end %>
+          </li>
+        </ul>
       </div>
       <div class="nav navbar-nav navbar-right">
-        <%= link_to "Log Out", log_out_path, class: ["btn", "btn-primary", 'btn-xsm']  %>
+        <%= link_to "Log Out", log_out_path, class: ["btn", "btn-danger", 'btn-xs', "log-out"]  %>
       </div>
     </div>
 

@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+ body{
+   font-family: 'Antic Slab', serif;
+   background-color: #95AFBA;
+}
+
+.log-out {
+  margin: 10px;
+}
+
+#questions {
+  list-style-type: none;
+  font-size: 1.2em;
+}
+
+#questions a {
+  color: #E2F89C;
+  font-weight: bold;
+}
