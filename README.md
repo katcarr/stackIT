@@ -26,11 +26,13 @@ Motivation
 >- FactoryGirl
 >- Unit testing with RSPEC
 >- Integration testing with CAPYBARA
+>- AJAX
+>- PhantomJs and Poltergeist Gem for integration tests with JavaScript
 
 Authors
 ------
 
-Jackie Fletcher and Kathryn Carr
+Jackie Fletcher, Kathryn Carr, and Luke Chinworth
 
 License
 -------
