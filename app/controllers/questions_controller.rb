@@ -8,7 +8,10 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @response = Response.new
-
+    response do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
   end
 
   def new

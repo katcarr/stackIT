@@ -8,14 +8,19 @@
         <p><b>User <%= response.user.email %> says:</b></p>
         <p><%= response.answer %></p>
       </div>
-      <div class="col-sm-3">
-        <% if current_user.voted_up_on? response %>
-          <%= link_to "Remove Vote", downvote_new_response_vote_path(response), class: "btn btn-danger" %>
-        <% else %>
-          <%= link_to "Vote Up", upvote_new_response_vote_path(response), class: "btn btn-success" %>
-        <% end %>
-        <div id="response-votes">
-          <%= response.get_likes.size %>
+      <div class="col-sm-2">
+        <div id="remove-vote-<%= response.id %>">
+          <%= link_to "Remove Vote", downvote_new_response_vote_path(response), class: "btn btn-danger", remote: true %>
+        </div>
+        <div id="upvote-<%= response.id %>">
+          <%= link_to "Vote Up", upvote_new_response_vote_path(response), class: "btn btn-success", remote: true %>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div id="vote-container-<%= response.id %>">
+          <div id="response-<%= response.id %>-votes">
+            <%= response.get_likes.size %>
+          </div>
         </div>
       </div>
     </div>
@@ -29,3 +34,15 @@
     <%= f.submit "AnswerIT", class: ['btn-warning', 'btn'] %>
   <% end %>
 <% end %>
+
+
+<script>
+  <% @question.responses.each do |r| %>
+    if (<%= current_user.voted_up_on? r %>) {
+      $('#upvote-<%= r.id %>').hide();
+    }
+    else {
+      $('#remove-vote-<%= r.id %>').hide();
+    }
+  <% end %>
+</script>

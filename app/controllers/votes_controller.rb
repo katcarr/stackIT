@@ -16,6 +16,9 @@ class VotesController<ApplicationController
   def downvote
     @response = Response.find(params[:response_id])
     @response.downvote_from current_user
-    redirect_to :back
+    response do |format|
+      format.html{redirect_to :back}
+      format.js
+    end
   end
 end
