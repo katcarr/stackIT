@@ -3,11 +3,13 @@ source 'https://rubygems.org'
 gem 'rails'
 gem 'pg'
 gem 'sass-rails'
+gem 'bootstrap-sass'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
+gem 'unobtrusive_flash', '>=3'
 
 group :development do
   gem 'byebug'
