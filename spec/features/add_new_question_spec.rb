@@ -17,5 +17,4 @@ require 'rails_helper'
       expect(page).to have_content 'How do I be more awesome'
     end
 
-
-end
+  end

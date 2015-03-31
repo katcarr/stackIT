@@ -6,8 +6,10 @@
 <br>
 
 <h2>Recent Questions</h2>
-  <% @questions.each do |question| %>
 <div id="questions">
-    <h3><%= link_to question.ask, question_path(question) %></h3>
-</div>
+  <% @questions.each do |question| %>
+    <div id="question">
+      <h3><%= link_to question.ask, question_path(question) %></h3>
+    </div>
   <% end %>
+</div>

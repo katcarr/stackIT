@@ -22,7 +22,10 @@ class QuestionsController < ApplicationController
     else
       flash[:alert] = "There was a problem submitting your question"
     end
-    redirect_to :back
+    response do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
   end
 
   private
