@@ -22,6 +22,8 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem "letter_opener", :group => :development
   gem 'pry'
+  gem 'poltergeist'
+  gem 'database_cleaner', '~> 1.4.1'
 end
 
 group :test do
