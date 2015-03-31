@@ -1,2 +1,2 @@
 $('#question-field').val('');
-$('#questions').append('<div id="question"><h3><%= j @question.ask %></h3></div>')
+$('#questions').append('<%= j render @question %>')

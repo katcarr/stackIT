@@ -7,9 +7,5 @@
 
 <h2>Recent Questions</h2>
 <div id="questions">
-  <% @questions.each do |question| %>
-    <div id="question">
-      <h3><%= link_to question.ask, question_path(question) %></h3>
-    </div>
-  <% end %>
+  <%= render @questions %>
 </div>

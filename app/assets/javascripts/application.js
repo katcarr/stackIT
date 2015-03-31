@@ -17,3 +17,5 @@
 //= require unobtrusive_flash
 //= require unobtrusive_flash_bootstrap
 //= require bootstrap-sprockets
+
+UnobtrusiveFlash.flashOptions['timeout'] = 2000;
