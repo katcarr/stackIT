@@ -12,20 +12,22 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="/">StackIT</a>
-        <ul class="nav navbar-nav">
-          <li>
-            <% if current_user %>
-            <%= link_to "Profile Page", user_path(current_user) %>
-          </li>
-          <li>
-            <%= link_to "Questions", questions_path %>
-            <% end %>
-          </li>
-        </ul>
+        <% if current_user %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to current_user.email, user_path(current_user) %></li>
+            <li><%= link_to "Questions", questions_path %></li>
+          </ul>
       </div>
-      <div class="nav navbar-nav navbar-right">
-        <%= link_to "Log Out", log_out_path, class: ["btn", "btn-danger", 'btn-xs', "log-out"]  %>
+          <div class="nav navbar-nav navbar-right">
+            <%= link_to "Log Out", log_out_path, class: ["btn", "btn-danger", 'btn-xs', "log-out"]  %>
+          </div>
+        <% else %>
       </div>
+          <div class="nav navbar-nav navbar-right">
+            <%= link_to 'Login', log_in_path, class: ["btn", "btn-success", 'btn-lg'] %>
+            <%= link_to 'Sign Up', new_user_path, class: ['btn', 'btn-success', 'btn-lg'] %>
+          </div>
+        <% end %>
     </div>
 
   </nav>

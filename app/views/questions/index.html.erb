@@ -1,10 +1,7 @@
 <h1>StackIT</h1>
-
-<h4>Welcome <%= @user.email %></h4>
-
-
-<%= render 'form' %>
-
+<% if current_user%>
+  <%= render 'form' %>
+<% end %>
 <br>
 <br>
 

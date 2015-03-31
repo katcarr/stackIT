@@ -9,10 +9,11 @@
     </div>
   <% end %>
 
-
-<%= form_for [@question, @response], class:"form-horizontal" do |f| %>
-  <%= f.label :answer, class:"form-label" %>
-  <%= f.text_field :answer, class:"form-control" %>
-<br>
-  <%= f.submit "AnswerIT", class: ['btn-warning', 'btn'] %>
+<% if current_user %>
+  <%= form_for [@question, @response], class:"form-horizontal" do |f| %>
+    <%= f.label :answer, class:"form-label" %>
+    <%= f.text_field :answer, class:"form-control" %>
+  <br>
+    <%= f.submit "AnswerIT", class: ['btn-warning', 'btn'] %>
+  <% end %>
 <% end %>
