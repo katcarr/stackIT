@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
   has_many :questions
   has_many :responses
+  acts_as_voter
 
   def encrypt_password
     self.password_salt = BCrypt::Engine.generate_salt

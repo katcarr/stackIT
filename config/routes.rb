@@ -11,4 +11,12 @@ Rails.application.routes.draw do
   resources :questions do
       resources :responses
   end
+
+  resources :responses do
+    resources :votes do
+      get 'upvote', on: :new
+      get 'downvote', on: :new
+    end
+  end
+
 end

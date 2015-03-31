@@ -3,9 +3,21 @@
 <br>
 <h3>Answers</h3>
   <% @question.bestFirst.each do |response| %>
-    <div class="well">
-      <p><b>User <%= response.user.email %> says:</b></p>
-      <p><%= response.answer %></p>
+    <div class="well row">
+      <div class="col-sm-9">
+        <p><b>User <%= response.user.email %> says:</b></p>
+        <p><%= response.answer %></p>
+      </div>
+      <div class="col-sm-3">
+        <% if current_user.voted_up_on? response %>
+          <%= link_to "Remove Vote", downvote_new_response_vote_path(response), class: "btn btn-danger" %>
+        <% else %>
+          <%= link_to "Vote Up", upvote_new_response_vote_path(response), class: "btn btn-success" %>
+        <% end %>
+        <div id="response-votes">
+          <%= response.get_likes.size %>
+        </div>
+      </div>
     </div>
   <% end %>
 
